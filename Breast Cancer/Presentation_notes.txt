@@ -1,0 +1,58 @@
+Motivation and Background
+______________________________
+
+The main purpose of this project was to accurately determine whether the breast cancer tumors are cancerous or not using only a Fine Needle Aspiration (FNA) procedure. During this procedure a thin needle is inserted into the tumor to collect a sample of cells. Core biopsy is  another procedure used for determining the type of cancer. It uses a hollow needle to take a sample of tissue and not only cells which makes the type of cancer easier to classify. 
+
+The FNA procedure is cheaper, faster and easier to perform than the core biopsy, but it produces, according to the authors of the data set, 25% of inconclusive diagnosis. Machine Learning techniques are focused on those 25% of inconclusive diagnosis. 
+
+
+Image Analysis
+_______________________________
+
+Once a sample of cells was collected and tinted it was put under a microscope. The part of the sample where the cells were well defined was scanned and analysed. 
+
+To analyse the image, the nuclei of the cells had to be selected and approximated boundary needed to be drawn manually. The computer program then measured the characteristics of each nucleus (such as size, shape, texture). For all of the measurements, the mean, extreme and standard error values were calculated.
+
+
+
+Data Analysis
+_______________________________
+
+Diagnosis is the target and it has a total of 30 features, the first 10 features contain the mean values of measured characteristics, the next 10 contain their corresponding standard errors and the last 10 values represent the worst cases. 
+
+Total number of samples in this data set is 569 out of which 357 samples are benign and 212 are malignant. Data set is quite balanced and it included no missing values. 
+
+I split the data set into training, validation and test set. The training set was 70% of the data set and the validation and test sets each included 15% of the data set.
+
+
+Plots
+
+The bar charts are showing how features relate to the target, where Heights represent the average value for specified characteristic Malignant and Benign tumours. As you can see in the shown examples the malignant tumours are represented by larger values. The same pattern is seen across all of the mean characteristics.
+
+These are just a couple of bar charts to show a quick overview how the properties of the nucleus are related to the malignancy of the cell. All means of the studied mean characteristics of individual samples show that the malignant tumours have on average larger properties than benign tumours. 
+
+Correlationa nd Distribution Plots show clear separatino between the types of tumour for the majority of the data points.
+
+As seen on the plot, PCA shows quite clear separation between B and M as well.
+
+
+
+Machine Learning 
+_______________________________
+
+Diagnosing the type of  a tumour is a classification problem. I applied 5 machine learning algorithms to the data set and here are the f-1 scores for the validation sets. Based on the validation test results I have chose the best model to use for further analysis.  Logistic regression and K-nearest neighbours performed the best. I have 
+
+
+Model Evaluation - Logistic Regression
+
+I evaluated the model using confusion matrix and the classification report. 57 tumors were classified as benign that were benign, 1 was a false negative, 40 were classified as malignant and were malignant and 3 were false positive.
+
+Recall is the fraction of the relevant diagnosis that was successfully retrieved. F-1 combines the precision and recall. 
+
+
+
+
+
+
+
+
